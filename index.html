@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistema Contable</title>
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Sistema Contable</h1>
+    <p>Control de Inventarios, Producción y Contabilidad</p>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <button onclick="mostrarSeccion('dashboard')">
+            Dashboard
+        </button>
+
+        <button onclick="mostrarSeccion('compras')">
+            Nueva Compra
+        </button>
+
+        <button onclick="mostrarSeccion('inventario')">
+            Inventario
+        </button>
+
+        <button onclick="mostrarSeccion('ordenes')">
+            Órdenes de Producción
+        </button>
+
+        <button onclick="mostrarSeccion('ventas')">
+            Ventas
+        </button>
+
+        <button onclick="mostrarSeccion('diario')">
+            Diario
+        </button>
+
+        <button onclick="mostrarSeccion('mayor')">
+            Libro Mayor
+        </button>
+
+        <button onclick="mostrarSeccion('reportes')">
+            Reportes
+        </button>
+
+    </aside>
+
+    <main class="contenido">
+
+        <section id="dashboard" class="seccion activa">
+            <h2>Dashboard</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Compras</h3>
+                    <p id="totalCompras">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Inventario</h3>
+                    <p id="totalInventario">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Órdenes</h3>
+                    <p id="totalOrdenes">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ventas</h3>
+                    <p id="totalVentas">0</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="compras" class="seccion">
+            <h2>Nueva Compra</h2>
+
+            <form id="formCompra">
+
+                <input
+                    type="text"
+                    id="producto"
+                    placeholder="Producto"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="cantidad"
+                    placeholder="Cantidad"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="costo"
+                    placeholder="Costo Unitario"
+                    required
+                >
+
+                <button type="submit">
+                    Guardar Compra
+                </button>
+
+            </form>
+        </section>
+
+        <section id="inventario" class="seccion">
+            <h2>Inventario</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Existencia</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaInventario">
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section id="ordenes" class="seccion">
+            <h2>Órdenes de Producción</h2>
+
+            <p>Próximamente...</p>
+        </section>
+
+        <section id="ventas" class="seccion">
+            <h2>Ventas</h2>
+
+            <p>Próximamente...</p>
+        </section>
+
+        <section id="diario" class="seccion">
+            <h2>Libro Diario</h2>
+
+            <p>Próximamente...</p>
+        </section>
+
+        <section id="mayor" class="seccion">
+            <h2>Libro Mayor</h2>
+
+            <p>Próximamente...</p>
+        </section>
+
+        <section id="reportes" class="seccion">
+            <h2>Reportes</h2>
+
+            <p>Próximamente...</p>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
