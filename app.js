@@ -67,4 +67,19 @@ function mostrarInventario(){
         `;
     });
 }
+function mostrarCompras(){
+    const tabla = document.getElementById("tablaCompras");
+    tabla.innerHTML = "";
+    compras.forEach(compra => {
+        tabla.innerHTML += `
+            <tr>
+                <td>${compra.fecha}</td>
+                <td>${compra.producto}</td>
+                <td>${compra.cantidad}</td>
+                <td>$${compra.costo}</td>
+            </tr>
+        `;
+    });
+}
 mostrarInventario();
+mostrarCompras();
