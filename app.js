@@ -117,31 +117,7 @@ function mostrarCompras(){
         localStorage.getItem("asientos")
     );
 }
-    const subtotal =
-        compra.cantidad * compra.costo;
-    const asiento = {
-        id: Date.now(),
-        fecha: compra.fecha,
-        concepto:
-            `Compra de ${compra.producto}`,
-        debe: [
-            {
-                cuenta: "Almacén MP",
-                monto: subtotal
-            }
-        ],
-        haber: [
-            {
-                cuenta: "Proveedores",
-                monto: subtotal
-            }
-        ]
-    };
-    asientos.push(asiento);
-    localStorage.setItem(
-        "asientos",
-        JSON.stringify(asientos)
-    );
+  
 }
 function mostrarAsientos(){
     const contenedor =
