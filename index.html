@@ -47,6 +47,9 @@
         <button onclick="mostrarSeccion('mayor')">
             Libro Mayor
         </button>
+        <button onclick="mostrarSeccion('comprasRegistradas')">
+    Compras Registradas
+</button>
 
         <button onclick="mostrarSeccion('reportes')">
             Reportes
@@ -136,7 +139,21 @@
             </table>
 
         </section>
-
+        <section id="comprasRegistradas" class="seccion">
+    <h2>Compras Registradas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+            </tr>
+        </thead>
+        <tbody id="tablaCompras">
+        </tbody>
+    </table>
+</section>
         <section id="ordenes" class="seccion">
             <h2>Órdenes de Producción</h2>
 
