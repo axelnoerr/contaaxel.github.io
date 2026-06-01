@@ -83,7 +83,6 @@ function mostrarCompras(){
         `;
     });
 }
-function generarAsientoCompra(compra){
     function generarAsientoCompra(compra){
 
     console.log("Entrando a generar asiento");
