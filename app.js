@@ -82,8 +82,6 @@ function mostrarCompras(){
         `;
     });
 }
-mostrarInventario();
-mostrarCompras();
 function generarAsientoCompra(compra){
     const subtotal =
         compra.cantidad * compra.costo;
@@ -111,3 +109,45 @@ function generarAsientoCompra(compra){
         JSON.stringify(asientos)
     );
 }
+function mostrarAsientos(){
+    const contenedor =
+        document.getElementById("listaAsientos");
+    if(!contenedor) return;
+    contenedor.innerHTML = "";
+    asientos.forEach(asiento => {
+        contenedor.innerHTML += `
+        <div class="asiento">
+            <h3>${asiento.concepto}</h3>
+            <p>${asiento.fecha}</p>
+            <table>
+                <tr>
+                    <th>Cuenta</th>
+                    <th>Debe</th>
+                    <th>Haber</th>
+                </tr>
+                <tr>
+                    <td>
+                        ${asiento.debe[0].cuenta}
+                    </td>
+                    <td>
+                        $${asiento.debe[0].monto}
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        ${asiento.haber[0].cuenta}
+                    </td>
+                    <td></td>
+                    <td>
+                        $${asiento.haber[0].monto}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        `;
+    });
+}
+mostrarInventario();
+mostrarCompras();
+mostrarAsientos();
