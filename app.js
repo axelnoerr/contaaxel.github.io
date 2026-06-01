@@ -22,6 +22,7 @@ function guardarCompra(e){
         "compras",
         JSON.stringify(compras)
     );
+    generarAsientoCompra(compra);
     actualizarInventario(compra);
     formCompra.reset();
     alert("Compra registrada correctamente");
