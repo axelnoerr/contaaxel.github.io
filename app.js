@@ -84,6 +84,41 @@ function mostrarCompras(){
     });
 }
 function generarAsientoCompra(compra){
+    function generarAsientoCompra(compra){
+
+    console.log("Entrando a generar asiento");
+
+    const subtotal =
+        compra.cantidad * compra.costo;
+
+    const asiento = {
+        id: Date.now(),
+        fecha: compra.fecha,
+        concepto: `Compra de ${compra.producto}`,
+        debe: [{
+            cuenta: "Almacén MP",
+            monto: subtotal
+        }],
+        haber: [{
+            cuenta: "Proveedores",
+            monto: subtotal
+        }]
+    };
+
+    console.log("Asiento creado:", asiento);
+
+    asientos.push(asiento);
+
+    localStorage.setItem(
+        "asientos",
+        JSON.stringify(asientos)
+    );
+
+    console.log(
+        "Guardado:",
+        localStorage.getItem("asientos")
+    );
+}
     const subtotal =
         compra.cantidad * compra.costo;
     const asiento = {
