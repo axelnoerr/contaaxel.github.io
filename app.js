@@ -1,3 +1,4 @@
+let asientos = JSON.parse(localStorage.getItem("asientos")) || [];
 let compras = JSON.parse(localStorage.getItem("compras")) || [];
 let inventario = JSON.parse(localStorage.getItem("inventario")) || [];
 const formCompra = document.getElementById("formCompra");
@@ -83,3 +84,30 @@ function mostrarCompras(){
 }
 mostrarInventario();
 mostrarCompras();
+function generarAsientoCompra(compra){
+    const subtotal =
+        compra.cantidad * compra.costo;
+    const asiento = {
+        id: Date.now(),
+        fecha: compra.fecha,
+        concepto:
+            `Compra de ${compra.producto}`,
+        debe: [
+            {
+                cuenta: "Almacén MP",
+                monto: subtotal
+            }
+        ],
+        haber: [
+            {
+                cuenta: "Proveedores",
+                monto: subtotal
+            }
+        ]
+    };
+    asientos.push(asiento);
+    localStorage.setItem(
+        "asientos",
+        JSON.stringify(asientos)
+    );
+}
