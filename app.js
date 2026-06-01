@@ -83,12 +83,11 @@ function mostrarCompras(){
         `;
     });
 }
-    function generarAsientoCompra(compra){
+  function generarAsientoCompra(compra){
 
     console.log("Entrando a generar asiento");
 
-    const subtotal =
-        compra.cantidad * compra.costo;
+    const subtotal = compra.cantidad * compra.costo;
 
     const asiento = {
         id: Date.now(),
