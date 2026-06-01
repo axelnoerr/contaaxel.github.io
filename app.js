@@ -118,7 +118,6 @@ function mostrarCompras(){
     );
 }
   
-}
 function mostrarAsientos(){
     const contenedor =
         document.getElementById("listaAsientos");
